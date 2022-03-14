@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/sibe-front/static/css/main.1dd3b83e.chunk.css",
+    "main.js": "/sibe-front/static/js/main.0a780242.chunk.js",
+    "main.js.map": "/sibe-front/static/js/main.0a780242.chunk.js.map",
+    "runtime-main.js": "/sibe-front/static/js/runtime-main.92c0f3a5.js",
+    "runtime-main.js.map": "/sibe-front/static/js/runtime-main.92c0f3a5.js.map",
+    "static/js/2.f68d14d9.chunk.js": "/sibe-front/static/js/2.f68d14d9.chunk.js",
+    "static/js/2.f68d14d9.chunk.js.map": "/sibe-front/static/js/2.f68d14d9.chunk.js.map",
+    "static/js/3.a73f42e0.chunk.js": "/sibe-front/static/js/3.a73f42e0.chunk.js",
+    "static/js/3.a73f42e0.chunk.js.map": "/sibe-front/static/js/3.a73f42e0.chunk.js.map",
+    "index.html": "/sibe-front/index.html",
+    "static/css/main.1dd3b83e.chunk.css.map": "/sibe-front/static/css/main.1dd3b83e.chunk.css.map",
+    "static/js/2.f68d14d9.chunk.js.LICENSE.txt": "/sibe-front/static/js/2.f68d14d9.chunk.js.LICENSE.txt",
+    "static/media/discord.2fd207e1.svg": "/sibe-front/static/media/discord.2fd207e1.svg",
+    "static/media/github.6cd3efeb.svg": "/sibe-front/static/media/github.6cd3efeb.svg",
+    "static/media/App.css": "/sibe-front/static/media/logo.219b83bc.svg",
+    "static/media/telegram.c2ac02ad.svg": "/sibe-front/static/media/telegram.c2ac02ad.svg",
+    "static/media/twitter.deedb5ed.svg": "/sibe-front/static/media/twitter.deedb5ed.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92c0f3a5.js",
+    "static/js/2.f68d14d9.chunk.js",
+    "static/css/main.1dd3b83e.chunk.css",
+    "static/js/main.0a780242.chunk.js"
+  ]
+}
