@@ -16,6 +16,9 @@ export default function DefiWrapper () {
                 <DefiItem />
                 <DefiItem />
                 <DefiItem />
+                <DefiItem />
+                <DefiItem />
+                <DefiItem />
             </div>
         </div>
     </div>

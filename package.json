@@ -1,7 +1,7 @@
 {
   "name": "sibe-front",
   "version": "0.1.0",
-  "homepage": "https://sibe-finance.github.io",
+  "homepage": "https://sibe-finance.github.io/sibe-front/",
   "private": true,
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.9.4",
