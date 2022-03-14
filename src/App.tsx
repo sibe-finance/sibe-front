@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Body from './components/Body';
+import NFTMarketplace from './components/NFTMarketplace';
+
 
 function App() {
+  const [staking, setStaking] = useState(true);
+
+  const openStakingHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setStaking(true);
+    event.preventDefault();
+    return {staking};
+}
+
+const openNFTHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+  setStaking(false);
+  event.preventDefault();
+  return {staking};
+}
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header nft={openNFTHandler} staking={openStakingHandler}/>
+      { staking ? <Body /> : <NFTMarketplace />}
+      <Footer />
     </div>
   );
 }
