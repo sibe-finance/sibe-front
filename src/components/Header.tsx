@@ -1,16 +1,16 @@
 import React from 'react';
+import Burger from "./BurgerButton"
 import github from "../static/img/github.svg";
 import telegram from "../static/img/telegram.svg";
 import twitter from "../static/img/twitter.svg";
 import discord from "../static/img/discord.svg";
 
-export default function Header (props:any) {
 
+export default function Header (props:any) {
     return (
-        <div className="header">
+        <div className="header" style={{backgroundColor: props.open && "#191919"  }}>
             <a href="|" className="header-logo">
             </a>
-
             <nav className="header-menu">
                 <ul className="header-menu-ul">
                     <li className="header-menu-li" onClick={props.staking}>Staking</li>
@@ -31,6 +31,7 @@ export default function Header (props:any) {
             <a href="/" className="header-howto-link">
                 How to buy
             </a>
+            <Burger open={props.open} setOpen={props.setOpen} />
         </div>
     )
 };

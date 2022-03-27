@@ -1,31 +1,44 @@
 import React, {useState} from 'react';
+import StakeButton from "./StakeButton";
+import { useWallet } from '@solana/wallet-adapter-react';
+import AddressBalance from "./AddressBalance";
 
 export default function Unstake () {
-    const [options, setOptions] = useState(false);
+    const [fee, setFee] = useState(true)
+    const wallet = useWallet();
 
-    const handleOptionsOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setOptions(!options);
+    const feeHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+        setFee(true);
         event.preventDefault();
-    }
+    };
+
+    const noFeeHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+        setFee(false);
+        event.preventDefault();
+    };
 
     return (
         <div className="stakeSol-wrapper">
             <div className="stake-input-wrapper">
+                { wallet.connected && <AddressBalance />}
                 <h3 className="stake-input-header">Enter amount</h3>
                 <div className="input-wrapper">
                     <input type="number" className="stake-input" id="stake-input" placeholder="0" min="0"  step="any" />
                     <label htmlFor="stake-input" className="stake-input-label">SOL</label>
                 </div>
-                <div className="wallet-options">
-                    <button className="stake-input-button" onClick={handleOptionsOpen} style={{borderRadius: options ? '20px 20px 0 0' : '20px', color: options ? 'grey' : 'white'}} > {options? 'Choose wallet' : 'Connect wallet' }<div className="arrow" style={{borderColor: options ? 'grey' : 'white', transform: options? 'rotate(225deg)' : 'rotate(45deg)', marginTop: options ? '7px' : '0'}}></div></button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}}>Phantom</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}}>Sollet</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}}>Sollet (Extension)</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}} >Solflare</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}} >Solflare Web</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}}>Coin98</button>
-                    <button className="wallet-op" style={{ display: options ? 'inherit' : 'none'}}>Slope</button>
-                </div>
+                { wallet.connected && <div className="unstake-options">
+                        <div className="unstake-op" onClick={feeHandler} style={{backgroundColor: fee ? '#1A1A1A' : 'transparent'}}>
+                            <p className="option-name">Unstake now</p>
+                            <p className="option-sum">11.234 SOL</p>
+                            <option value="" className="commission">Commission from 0.3%</option>
+                        </div>
+                        <div className="unstake-op" onClick={noFeeHandler} style={{backgroundColor: !fee ? '#1A1A1A' : 'transparent'}}>
+                            <p className="option-name">Unstake in 2 days</p>
+                            <p className="option-sum">11.234 SOL</p>
+                            <option value="" className="commission">Comission 0%</option>
+                        </div>
+                 </div> }
+                <StakeButton children="Unstake" />
             </div>
             <div className="stake-info">
                 <p className="stake-info-name">Exchange rate</p>

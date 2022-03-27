@@ -1,4 +1,3 @@
-import React from 'react';
 import DefiItem from './DefiItem';
 
 export default function DefiWrapper () {
@@ -23,4 +22,4 @@ export default function DefiWrapper () {
         </div>
     </div>
    ) 
-}
+};

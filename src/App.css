@@ -96,7 +96,7 @@ h1 {
 
 .header-menu-li {
   cursor: pointer;
-  margin-right: 50px;
+  margin-right: 2.6vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,21 +110,23 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 30px;
-  width: 210px;
+  height: 1.56vw;
+  width: 12vw;
 
 }
 
 .header-socials-li a img {
-  height: 30px;
-  width: 30px;
+  height: 1.56vw;
+  width: 1.56vw;
 }
 
 .header-howto-link {
+  width: 13.2vw;
+  max-width: 253px;
+  max-height: 55px;
   cursor: pointer;
   color: var(--color-light);
-  height: 55px;
-  padding: 20px 50px;
+  padding: 1vw 2.6vw;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   background-color: transparent;
@@ -137,6 +139,10 @@ h1 {
 .header-howto-link:hover{
   color: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+.burger {
+  display: none;
 }
 
 /*Body*/
@@ -163,6 +169,7 @@ h1 {
 }
 
 /*Stake SOL*/
+
 .stakeSol {
   display: flex;
   flex-direction: column;
@@ -177,6 +184,7 @@ h1 {
   align-items: center;
   min-height: 25vw;
   width: 30vw;
+  max-width: 518px;
   background-color: var(--color-dark-lighter);
   border-radius: 20px;
   padding: 2vw;
@@ -206,8 +214,10 @@ h1 {
 }
 
 .stake-input-wrapper {
-  width: 26vw;
-  height: 12vw;
+  width: 26.9vw;
+  max-width: 418px;
+  min-height: 12vw;
+  max-height: 631px;
   background-color: var(--color-dark);
   padding: 1vw;
   margin-bottom: 20px;
@@ -218,11 +228,12 @@ h1 {
 } 
 
 .stake-input {
-  color: var(--color-light-darker);
+  color: var(--color-light);
   border: none;
   background-color: transparent;
-  min-width: 7%;
+  width: 2vw;
   max-width: 80%;
+  margin-right: 1vw;
   height: 4.6vw;
   font-size: 30px;
   font-weight: 600;
@@ -230,7 +241,7 @@ h1 {
 }
 
 .input-wrapper {
-  max-width: 24vw;
+  max-width: 21.7vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -242,10 +253,29 @@ h1 {
 }
 
 
+.wallet-adapter-button-start-icon {
+  display: none !important;
+}
+
 .stake-input-button {
   width: 100%;
-  height: 50px;
-  background-color: var(--color-grey);
+  height: 50px ;
+  background-color: var(--color-grey) !important;
+  color: var(--color-light);
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px !important;
+}
+
+.stake-submit-button {
+  width: 100%;
+  min-height: 50px;
+  background-color: var(--color-primary);
   color: var(--color-light);
   font-size: 18px;
   font-weight: 600;
@@ -263,12 +293,11 @@ h1 {
   border-bottom: 1.5px solid var(--color-light);
   border-right: 1.5px solid var(--color-light);
   transform: rotate(45deg);
-  margin-left: 10px;
+  margin: 0 0 3px 10px ;
 }
 
-.wallet-options {
-  border-radius: 20px;
-  z-index: 1;
+.wallet-adapter-modal-wrapper {
+  border-radius: 20px !important;
 }
 
 .wallet-op {
@@ -288,13 +317,6 @@ h1 {
   background-color: var(--color-dark-lighter);
 }
 
-.currency-logo {
-  margin-bottom: 8px;
-}
-
-.currency-name {
-  align-self: center;
-}
 
 .stake-balance {
   margin-top: 10px;
@@ -307,18 +329,36 @@ h1 {
 }
 
 .unstake-op {
-  height: 7vw;
-  width: 16vw;
-  font-weight: 500;
-  border-radius: 17px;
-  margin-bottom: 20px;
+  width: 12vw;
+  max-width: 170px;
+  border-radius: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--color-primary);
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid var(--color-dark-lighter);
+}
+
+.option-name {
+  color: var(--color-light-darker);
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.option-sum {
+  color: var(--color-light);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.commission {
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .stake-info {
@@ -327,21 +367,66 @@ h1 {
   margin-bottom: 10px;
 }
 
+.address-balance-wrapper {
+  margin-bottom: 10px;
+  border-bottom: .5px solid var(--color-dark-lighter);
+  padding-bottom: 10px;
+}
+
+.address-balance {
+  display: flex;
+  align-items: center;
+}
+
+.adress-balance-header {
+  margin-right: 10px;
+}
+
+.address-value {
+  font-size: 14px !important;
+  color: var(--color-light) !important;
+  height: 2vw !important;
+  max-height:26px !important;
+  width: auto !important;
+  padding: 10px !important;
+  border-radius: 20px !important;
+  background-color: var(--color-dark-lighter) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.balance-value {
+  color: var(--color-light);
+  font-weight: 600;
+}
+
+.decor {
+  display: none;
+}
+
 /*info-panel*/
 
 .info-panel-wrapper {
-  min-width: 52vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   margin: 20px 0;
   padding: 20px;
   border: 1px solid var(--color-grey);
   border-radius: 20px;
 }
 
+.info-item-wrapper {
+  min-width: 52vw;
+  max-width: 925px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
 .info-item {
   min-width: 6vw;
+  max-width: 167px;
   min-height: 5vw;
   display: flex;
   flex-direction: column;
@@ -438,15 +523,15 @@ h1 {
 }
 
 .defi-item-wrapper h4 {
-text-align: left;
+  text-align: left;
 }
-
 
 .defi-item-wrapper:nth-last-child(1) {
   border: none;
 }
 
 .defi-item-pair {
+  min-width: 25.5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -461,6 +546,14 @@ text-align: left;
   margin-right: 10px;
 }
 
+.defi-item-apy {
+  min-width: 5%;
+}
+
+.defi-item-tvl {
+  min-width: 10%;
+}
+
 .defi-item-provider {
   width: 3.125vw;
   height: 3.125vw;
@@ -469,13 +562,13 @@ text-align: left;
 }
 
 .defi-item-buttons {
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
 .defi-item-buttons button {
-  height: 2.5vw;
   border-radius: 10px;
   border: 1px solid var(--color-grey);
   padding: 5px 30px;
@@ -493,6 +586,10 @@ text-align: left;
   background-color: transparent;
 }
 
+.defi-item-header {
+  display: none;
+}
+
 /*nft-item*/
 
 .nft-marketplace-wrapper {
@@ -503,12 +600,12 @@ text-align: left;
 }
 
 .nft-marketplace-items-wrapper {
-  width: fit-content;
-  max-width: 50vw;
+  width: 49.6vw;
+  max-width: 954px;
   background-color: var(--color-dark-lighter);
   border-radius: 20px;
   margin-top: 20px;
-  padding: 2vw 1vw;
+  padding: 1vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -516,19 +613,23 @@ text-align: left;
 }
 
 .nft-items-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vw;
+  grid-auto-rows: min-content;
+  grid-auto-flow: row;
+  margin-top: 1vw;
 }
 
 .nft-item-wrapper {
   cursor: pointer;
-  width: 14.5vw;
+  width: 14.47vw;
+  max-width: 278px;
   height: 21.82vw;
+  max-height: 419px;
   background-color: var(--color-dark);
   border-radius: 17px;
   padding: 1vw;
-  margin: 1.3vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -537,10 +638,14 @@ text-align: left;
 
 .nft-item-img {
   width: 12.4vw;
+  max-width: 238px;
   height: 14.9vw;
+  max-height: 286px;
   background-color: var(--color-primary);
-  margin-bottom: 10px;
+  margin-bottom: 0.5vw;
   border-radius: 20px;
+  align-self: center;
+  justify-self: center;
 }
 
 .nft-item-name {
@@ -559,11 +664,19 @@ text-align: left;
   height: 30px;
 }
 
+.arrows {
+  display: none;
+}
+
+.arrow-wrapper {
+  display: none;
+}
+
 /*footer*/
 
 .footer {
   height: 10.4vw;
-  padding: 50px;
+  padding: 2.6vw;
   background-color: var(--color-dark-lighter);
   color: var(--color-light-darker);
 
@@ -578,12 +691,18 @@ text-align: left;
   flex-direction: row;
   justify-content: space-between;
   width: 30vw;
+  max-width: 438px;
 
 }
 
 .footer-socials-li a img{
-  height: 40px;
-  width: 40px;
+  height: 3vw;
+  width: 3vw;
+  opacity: 0.3;
+}
+
+.footer-socials-li a img:hover {
+  opacity: 1;
 }
 
 .footer-menu-ul {
@@ -592,7 +711,7 @@ text-align: left;
 }
 
 .footer-menu-li a {
-  margin-right: 80px;
+  margin-right: 4.16vw;
   color: var(--color-light-darker);
 }
 

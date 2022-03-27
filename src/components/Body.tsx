@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import StakeSOL from './StakeSOL';
 import DefiWrapper from './DefiWrapper';
+import NFTMarketplace from './NFTMarketplace';
 
-export default function Body () {
+export default function Body (props:any) {
     const [stake, setStake] = useState(true);
     const [defi, setDefi] = useState(false);
 
@@ -20,16 +21,17 @@ export default function Body () {
         return {stake, defi};
     }
 
-    return (
-        <div className="body">
-            <nav className="body-nav">
-                <ul className="body-ul">
-                    <li className="body-li"><button className="body-nav-button" style={{ color: stake ? "#00b2ff" : "#5e5e5e"}} onClick={changeStakeHandler}>Staking</button></li>
-                    <li className="body-li"><button className="body-nav-button" style={{ color: defi ? "#00b2ff" : "#5e5e5e"}}  onClick={changeDefiHandler}>Defi</button></li>
-                </ul>
-            </nav>
-            {stake && <StakeSOL />}
-            {defi && <DefiWrapper />}
-        </div>
+    return (<>
+            {props.staking ? <div className="body">
+                <nav className="body-nav">
+                    <ul className="body-ul">
+                        <li className="body-li"><button className="body-nav-button" style={{ color: stake ? "#00b2ff" : "#5e5e5e"}} onClick={changeStakeHandler}>Staking</button></li>
+                        <li className="body-li"><button className="body-nav-button" style={{ color: defi ? "#00b2ff" : "#5e5e5e"}}  onClick={changeDefiHandler}>Defi</button></li>
+                    </ul>
+                </nav>
+                {stake && <StakeSOL />}
+                {defi && <DefiWrapper />}
+            </div> : <NFTMarketplace /> }
+    </>
     )
-}
+};

@@ -4,9 +4,10 @@
   "homepage": "https://sibe-finance.github.io/sibe-front/",
   "private": true,
   "dependencies": {
-    "@solana/wallet-adapter-base": "^0.9.4",
-    "@solana/wallet-adapter-react": "^0.15.3",
-    "@solana/wallet-adapter-react-ui": "^0.9.5",
+    "@project-serum/anchor": "^0.22.1",
+    "@solana/wallet-adapter-base": "^0.9.5",
+    "@solana/wallet-adapter-react": "^0.15.4",
+    "@solana/wallet-adapter-react-ui": "^0.9.6",
     "@solana/wallet-adapter-wallets": "^0.15.5",
     "@solana/web3.js": "^1.36.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -18,7 +19,8 @@
     "@types/react-dom": "^17.0.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.0",
+    "stream": "^0.0.2",
     "typescript": "^4.6.2",
     "web-vitals": "^2.1.4"
   },
